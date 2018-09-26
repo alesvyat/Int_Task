@@ -1,7 +1,10 @@
 package ru.tinkoff.svyatkin.general;
 
 public class LogUtils {
-	
+	/**
+	 * Reports an exception details to console
+	 * @param e Exception object
+	 */
 	public static void reportException(Exception e) {
 		try {
 			String method = e.getStackTrace()[0].getMethodName();

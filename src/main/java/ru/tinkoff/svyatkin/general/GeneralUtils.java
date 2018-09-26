@@ -65,8 +65,7 @@ public class GeneralUtils {
 	}
 	
 	/**
-	 * 
-	 * @param driver
+	 * Waits a child of some parent element by attributes
 	 * @param parentElement
 	 * @param attributes	//	if attribute is a tag name, enter "" (empty) for 1-st element of this array
 	 * @param values	// if attribute should be absent, enter "!" in its value
@@ -115,6 +114,13 @@ public class GeneralUtils {
 		}
 	}
 	
+	/**
+	 * Waits a child of some parent element by 'id' attribute
+	 * @param parentElement
+	 * @param id
+	 * @param timeOutInMillis
+	 * @return
+	 */
 	public static WebElement waitWebElementById(WebElement parentElement, String id, long timeOutInMillis) {
 		try {
 			return waitWebElement(parentElement, "id", id, timeOutInMillis);
@@ -124,24 +130,12 @@ public class GeneralUtils {
 		}
 	}
 	
-	/*public static WebElement[] waitAllWebElements(WebDriver driver, WebElement parentElement, String[] attributes, String[] values, long timeout) {
-		try {
-			String xPath = "";
-			if(parentElement != null)
-				xPath = getXPath(driver, parentElement);
-			xPath += "//*[";
-			for(int i = 0; i < attributes.length; i++) {
-				String andStr = i > 0 ? " and " : "";
-				xPath += andStr + "@" + attributes[i] + "='" + values[i] + "'";
-			}
-			xPath += "]";
-			WebDriverWait wdWait = new WebDriverWait(driver, timeout);
-			return wdWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPath)));
-		} catch (Exception e) {
-			return null;
-		}
-	}*/
-	
+	/**
+	 * Waits alert
+	 * @param text
+	 * @param timeOutInMillis
+	 * @return Alert object
+	 */
 	public static Alert waitAlert(String text, long timeOutInMillis) {
 		try {
 			Alert alert = null;
@@ -158,6 +152,7 @@ public class GeneralUtils {
 	}
 	
 	/**
+	 * Hovers mouse on specified element
 	 * Needed because org.openqa.selenium.interactions.Actions.moveToElement(..) does not work
 	 * @param element
 	 */
@@ -174,21 +169,10 @@ public class GeneralUtils {
 	}
 	
 	/**
-	 * Not ready
-	 * @param fromElement
-	 * @param xStart
-	 * @param yStart
-	 * @param xDelta
-	 * @param yDelta
+	 * Get Windows build number
+	 * As for 2018, needed for Windows 10 only
+	 * @return Windows build number
 	 */
-	public static void dragAndDrop(WebElement fromElement, int xStart, int yStart, int xDelta, int yDelta) {
-		try {
-			
-		} catch (Exception e) {
-			LogUtils.reportException(e);
-		}
-	}
-	
 	public static String getWindowsBuildNumber() {
 		try {
 			final String buildWord = "Build";

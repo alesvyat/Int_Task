@@ -15,6 +15,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.tinkoff.svyatkin.general.Globals;
 
 public class BrowserUtils {
+	/**
+	 * Launches needed browser and opens needed URL
+	 * @param address
+	 * @param browser
+	 * @return WebDriver object
+	 */
 	public static WebDriver launchBrowser(String address, String browser) {
 		try {
 			WebDriver webDriver = null;
@@ -74,6 +80,11 @@ public class BrowserUtils {
 		}
 	}
 	
+	/**
+	 * Launches browser and opens needed URL. Browser specified in apps.xml
+	 * @param address
+	 * @return
+	 */
 	public static WebDriver launchBrowser(String address) {
 		try {
 			return launchBrowser(address, Globals.currentDriver);
@@ -83,6 +94,9 @@ public class BrowserUtils {
 		}
 	}
 	
+	/**
+	 * Closes browser
+	 */
 	public static void closeBrowser() {
 		try {
 			/*
