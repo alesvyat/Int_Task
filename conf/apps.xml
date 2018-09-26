@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apps>
+	<browser>
+		<current>chrome</current>
+		<chrome driverPath="C:\SeleniumDrivers\chromedriver.exe"/>
+		<firefox driverPath="C:\SeleniumDrivers\geckodriver.exe" binaryPath="C:\Program Files\Mozilla Firefox\firefox.exe"/>
+		<ie driverPath="C:\SeleniumDrivers\IEDriverServer.exe"/>
+		<edge driverPath="C:\SeleniumDrivers\MicrosoftWebDriver.exe"/>
+		<downloadsDir>C:\downloads</downloadsDir>
+		<!-- Change it manually for IE! -->
+	</browser>
+	<url host="tinkoff.ru" port=""/>
+</apps>
